@@ -1,0 +1,369 @@
+:root {
+  color: #172026;
+  background: #f4f6f5;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 28px;
+}
+
+.topbar {
+  align-items: end;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin: 0 auto 22px;
+  max-width: 1200px;
+}
+
+.eyebrow {
+  color: #5c6970;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: 0 0 5px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 4.1rem);
+  line-height: 0.96;
+  margin: 0;
+}
+
+.tier-legend {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: end;
+}
+
+.legend-item {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #d7dedb;
+  border-radius: 8px;
+  display: inline-flex;
+  font-size: 0.86rem;
+  font-weight: 700;
+  gap: 8px;
+  min-height: 34px;
+  padding: 7px 10px;
+}
+
+.legend-item::before {
+  border-radius: 999px;
+  content: "";
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+}
+
+.legend-item.silver::before {
+  background: #8fa4ad;
+}
+
+.legend-item.gold::before {
+  background: #d99f27;
+}
+
+.legend-item.platinum::before {
+  background: #3f7c85;
+}
+
+.legend-item.booked::before {
+  background: #7a8084;
+}
+
+.workspace {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.seat-map-panel,
+.booking-panel {
+  background: #ffffff;
+  border: 1px solid #dce3e0;
+  border-radius: 8px;
+  box-shadow: 0 16px 45px rgba(23, 32, 38, 0.08);
+}
+
+.seat-map-panel {
+  overflow: hidden;
+  padding: 24px;
+}
+
+.screen {
+  background: linear-gradient(90deg, #263238, #47646b, #263238);
+  border-radius: 0 0 80% 80%;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  height: 42px;
+  line-height: 42px;
+  margin: 0 auto 28px;
+  max-width: 640px;
+  text-align: center;
+}
+
+.seat-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(10, minmax(42px, 1fr));
+}
+
+.seat {
+  align-items: center;
+  border: 2px solid transparent;
+  border-radius: 8px 8px 14px 14px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 0.9rem;
+  font-weight: 800;
+  justify-content: center;
+  min-height: 48px;
+  outline: none;
+  transition:
+    border-color 150ms ease,
+    filter 150ms ease,
+    transform 150ms ease;
+}
+
+.seat:hover:not(:disabled),
+.seat:focus-visible {
+  filter: brightness(1.04);
+  transform: translateY(-2px);
+}
+
+.seat-silver {
+  background: #667f8a;
+}
+
+.seat-gold {
+  background: #c48a15;
+}
+
+.seat-platinum {
+  background: #236b74;
+}
+
+.seat-selected {
+  border-color: #11181c;
+  box-shadow: inset 0 0 0 2px #ffffff;
+}
+
+.seat-booked {
+  background: #7b8286;
+  color: #d8dddd;
+  cursor: not-allowed;
+  filter: grayscale(0.3);
+  opacity: 0.72;
+}
+
+.booking-panel {
+  align-self: start;
+  padding: 20px;
+}
+
+.summary-cards {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.metric {
+  background: #f2f5f3;
+  border: 1px solid #dce3e0;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.metric span {
+  color: #5e6b72;
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.metric strong {
+  display: block;
+  font-size: 1.35rem;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.field span {
+  color: #5e6b72;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.field input {
+  border: 1px solid #cbd5d1;
+  border-radius: 8px;
+  min-height: 44px;
+  padding: 10px 12px;
+}
+
+.field input:focus {
+  border-color: #236b74;
+  outline: 3px solid rgba(35, 107, 116, 0.18);
+}
+
+.selected-list {
+  border-bottom: 1px solid #dce3e0;
+  border-top: 1px solid #dce3e0;
+  display: grid;
+  gap: 8px;
+  margin: 18px 0;
+  min-height: 114px;
+  padding: 14px 0;
+}
+
+.selected-list p {
+  align-self: center;
+  color: #647179;
+  margin: 0;
+}
+
+.selected-row {
+  align-items: center;
+  display: flex;
+  font-weight: 750;
+  justify-content: space-between;
+}
+
+.selected-row span:last-child {
+  color: #4b5960;
+  font-weight: 700;
+}
+
+.status-message {
+  background: #e9f5f2;
+  border: 1px solid #b7d9d1;
+  border-radius: 8px;
+  color: #174c43;
+  font-weight: 750;
+  margin-bottom: 16px;
+  padding: 12px;
+}
+
+.actions {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.primary-button,
+.ghost-button {
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 800;
+  gap: 8px;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 12px;
+}
+
+.primary-button {
+  background: #162327;
+  border: 1px solid #162327;
+  color: #ffffff;
+}
+
+.ghost-button {
+  background: #ffffff;
+  border: 1px solid #cbd5d1;
+  color: #18252a;
+}
+
+.primary-button:disabled,
+.ghost-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.mobile-total {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    padding: 18px 14px 84px;
+  }
+
+  .topbar {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .tier-legend {
+    justify-content: start;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .seat-map-panel {
+    padding: 14px;
+  }
+
+  .seat-grid {
+    gap: 7px;
+    grid-template-columns: repeat(10, minmax(25px, 1fr));
+  }
+
+  .seat {
+    border-radius: 6px 6px 10px 10px;
+    font-size: 0.68rem;
+    min-height: 34px;
+  }
+
+  .mobile-total {
+    align-items: center;
+    background: #162327;
+    border-radius: 8px 8px 0 0;
+    bottom: 0;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    left: 14px;
+    min-height: 56px;
+    padding: 12px 16px;
+    position: fixed;
+    right: 14px;
+  }
+}
