@@ -1,0 +1,13 @@
+.DS_Store
+
+# Java / Spring Boot
+backend/target/
+
+# Node / React
+frontend/node_modules/
+frontend/dist/
+frontend/coverage/
+
+# IDEs
+.idea/
+.vscode/
